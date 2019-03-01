@@ -24,7 +24,6 @@ export class PostService {
       const data = a.payload.doc.data() as Post;
       data.id = a.payload.doc.id;
       return data;
-      });
 
     }));
   // this.postsCollection = this.afs.collection('posts', ref => ref.orderBy('published', 'desc')); default
