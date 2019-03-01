@@ -25,6 +25,7 @@ export class PostService {
       data.id = a.payload.doc.id;
       return data;
 
+      });
     }));
   // this.postsCollection = this.afs.collection('posts', ref => ref.orderBy('published', 'desc')); default
   // this.posteos = this.afs.collection('post').valueChanges(); // bueno!
@@ -48,7 +49,7 @@ export class PostService {
   }
 
   getPostData(post: Post) {
-    this.postDoc = this.afs.doc(`post/${id}`);
+    this.postDoc = this.afs.doc(`post/${post.id}`);
     return this.postDoc.valueChanges();
   }
 

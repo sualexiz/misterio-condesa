@@ -1,8 +1,12 @@
 <div *ngFor="let p of posteos">
-    <h2 [routerLink]="['post.id']">{{p.title}}</h2>
+    <h2 [routerLink]="['poste' ]">{{p.title}}</h2>
     <p>{{p.content}}</p>
 </div>
 
+<div *ngIf="posteos">
+    <h3>{{posteos.title}}</h3>
+
+</div>
 <!-- <div *ngFor="let p of posteos">
     <h2>{{p.title}}</h2>
     <p>{{p.content}}</p>

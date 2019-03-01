@@ -18,10 +18,10 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
 
     // this.posts = this.postService.getPost();
-    // console.log (this.posts);
+    // console.log (this.posts); para actiualizad a git
 
     this.postService.getAlexis().subscribe((posteos) => {
-    console.log(posteos);
+    console.log(this);
     this.posteos = posteos;
 
     });
