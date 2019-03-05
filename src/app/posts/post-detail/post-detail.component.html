@@ -1,5 +1,7 @@
-<div>
-    <h3>detalles</h3>
-    <p></p>
-    mas bonitos
+<div *ngIf="post">
+    <h3>{{post.title}}</h3>
+    <p>Posteado por: {{post.author}}</p>
+    <p>{{post.content}}</p>
 </div>
+
+<h1>Ahora SI</h1>

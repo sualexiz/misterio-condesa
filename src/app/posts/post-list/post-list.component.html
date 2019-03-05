@@ -1,13 +1,14 @@
-<div *ngFor="let p of posteos">
-    <h2 [routerLink]="['poste' ]">{{p.title}}</h2>
-    <p>{{p.content}}</p>
-</div>
+<section>
+    <mat-card *ngFor="let p of posteos">
+        <mat-card-content routerLink={{p.id}}>
+            <img src="{{p.image}}" alt="{{p.title}}">
+            <h2>{{p.title}}</h2>
+        </mat-card-content>
+        <mat-card-actions>
+            <button>
+                <mat-card-actions>Un incono de no se de que</mat-card-actions>
+            </button>
+        </mat-card-actions>
+    </mat-card>
 
-<div *ngIf="posteos">
-    <h3>{{posteos.title}}</h3>
-
-</div>
-<!-- <div *ngFor="let p of posteos">
-    <h2>{{p.title}}</h2>
-    <p>{{p.content}}</p>
-</div> -->
+</section>

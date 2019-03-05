@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post';
+import { Post } from '../../posts/post';
 import { PostService } from '../../posts/post.service';
 import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -10,8 +11,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  // posts: Observable<Post[]>; // default
-  posteos = [];
+
+  posts: Observable<Post[]>; // default
+  posteos: any[] = [];
+
+
 
   constructor(public postService: PostService) { }
   // public posteos = []; para eliminar
@@ -21,8 +25,10 @@ export class PostListComponent implements OnInit {
     // console.log (this.posts); para actiualizad a git
 
     this.postService.getAlexis().subscribe((posteos) => {
-    console.log(this);
+
     this.posteos = posteos;
+    console.log('Listado de posteos');
+    console.log(posteos);
 
     });
   }

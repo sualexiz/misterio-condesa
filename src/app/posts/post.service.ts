@@ -32,8 +32,6 @@ export class PostService {
 
   }
 
-
-
   // getPost() {
   //   return this.postsCollection.snapshotChanges().pipe(map(actions => {
   //     return actions.map(a => {
@@ -48,9 +46,30 @@ export class PostService {
     return this.posteos;
   }
 
-  getPostData(post: Post) {
-    this.postDoc = this.afs.doc(`post/${post.id}`);
+  getPostData(posteos: Post) {
+    this.postDoc = this.afs.doc(`post/${posteos.id}`);
     return this.postDoc.valueChanges();
+
+  }
+
+  getPostData2(id: string) {
+    this.postDoc = this.afs.doc<Post>(`post/${id}`);
+    return this.postDoc.valueChanges();
+
+  }
+
+  getPost(id: string) {
+    return this.afs.doc<Post>(`post/${id}`);
+  }
+
+  create(data: Post) {
+    this.postsCollection.add(data);
+  }
+  // delete( id: string) {
+  //   return this.afs.getAlexis(id).detele();
+  // }
+  update( id: string, formData){
+    return this.getPost(id).update(formData);
   }
 
 }
