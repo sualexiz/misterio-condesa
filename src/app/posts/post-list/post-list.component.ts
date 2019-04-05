@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Post } from '../../posts/post';
 import { PostService } from '../../posts/post.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 
 
@@ -10,10 +10,11 @@ import { Observable } from 'rxjs';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css']
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent implements OnInit, OnDestroy {
 
   posts: Observable<Post[]>; // default
   posteos: any[] = [];
+  subscriptions: Subscription = new Subscription();
 
 
 
@@ -23,14 +24,25 @@ export class PostListComponent implements OnInit {
 
     // this.posts = this.postService.getPost();
     // console.log (this.posts); para actiualizad a git
+    // Como estaba antes
+    // this.postService.getAlexis().subscribe((posteos) => {
+    // this.posteos = posteos;
+    // console.log('Listado de posteos');
+    // console.log(posteos);
+    // });
+    this.miNuevoMetodo();
+  }
 
-    this.postService.getAlexis().subscribe((posteos) => {
+ngOnDestroy() {
+this.subscriptions.unsubscribe();
+  }
 
-    this.posteos = posteos;
-    console.log('Listado de posteos');
-    console.log(posteos);
-
-    });
+  miNuevoMetodo() {
+    this.subscriptions.add(
+      this.postService.getAlexis().subscribe((posteos) => {
+        this.posteos = posteos;
+      })
+    );
   }
 
 }

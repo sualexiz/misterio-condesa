@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
     <mat-toolbar-row>
         <span [routerLink]="['/blog']">Misterio de la Condesa</span>
         <span class="spacer"></span>
@@ -7,4 +7,44 @@
         </div>
     </mat-toolbar-row>
 
+</mat-toolbar> -->
+
+
+<mat-toolbar color="primary">
+    <div>
+        <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+      </button>
+        <!-- <div fxFlex fxLayout fxLayoutAlign="end">
+            <button mat-raised-button color="accent" [routerLink]="['/dashboard']">Escribe tu historia</button>
+        </div> -->
+    </div>
+    <div [routerLink]="['/blog']">
+        <a>LOGO</a>
+    </div>
+
+
+
+    <!-- <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a>Capítulos</a>
+            </li>
+            <li>
+                <a>Encuesta</a>
+            </li>
+            <li>
+                <a>Personajes</a>
+            </li>
+            <li>
+                <a>Videos alternos</a>
+            </li>
+        </ul>
+
+
+    </div> -->
+
+    <div fxHide.xs>
+        <button mat-raised-button color="accent" [routerLink]="['/dashboard']">Escribe tu historia</button>
+    </div>
 </mat-toolbar>

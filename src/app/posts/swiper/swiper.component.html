@@ -1,0 +1,14 @@
+<swiper [config]="config">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of images; let i = index">
+            <img [routerLink]="['/capitulos',i]" [src]="image.src" />
+
+        </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</swiper>

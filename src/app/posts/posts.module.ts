@@ -5,15 +5,23 @@ import { PostDashboardComponent } from './post-dashboard/post-dashboard.componen
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { BodyComponent } from './body/body.component';
+import { ContentComponent } from './content/content.component';
+
+import { SwiperComponent } from './swiper/swiper.component';
+
+
 
 const routes: Routes = [
+  { path: 'home', component: BodyComponent},
+  { path: 'capitulos/:id', component: ContentComponent},
   { path: 'blog', component: PostListComponent},
   { path: 'blog/:id', component: PostDetailComponent },
   { path: 'dashboard', component: PostDashboardComponent }
 ];
 
 @NgModule({
-  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent],
+  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent, BodyComponent, SwiperComponent, ContentComponent],
   imports: [
     CommonModule,
     SharedModule,
