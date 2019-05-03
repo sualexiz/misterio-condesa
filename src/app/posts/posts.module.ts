@@ -8,7 +8,10 @@ import { SharedModule } from '../shared/shared.module';
 import { BodyComponent } from './body/body.component';
 import { ContentComponent } from './content/content.component';
 
-import { SwiperComponent } from './swiper/swiper.component';
+
+import { Swiper2Component } from './swiper2/swiper2.component';
+import { ConocemasComponent } from './conocemas/conocemas.component';
+import { SafeUrlPipe } from '../videosalud.pipe';
 
 
 
@@ -17,11 +20,12 @@ const routes: Routes = [
   { path: 'capitulos/:id', component: ContentComponent},
   { path: 'blog', component: PostListComponent},
   { path: 'blog/:id', component: PostDetailComponent },
-  { path: 'dashboard', component: PostDashboardComponent }
+  { path: 'dashboard', component: PostDashboardComponent },
+  { path: 'conocemas', component: ConocemasComponent }
 ];
 
 @NgModule({
-  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent, BodyComponent, SwiperComponent, ContentComponent],
+  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent, BodyComponent, Swiper2Component, ContentComponent, ConocemasComponent,SafeUrlPipe],
   imports: [
     CommonModule,
     SharedModule,

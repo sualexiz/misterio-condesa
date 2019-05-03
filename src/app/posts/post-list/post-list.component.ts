@@ -12,11 +12,9 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class PostListComponent implements OnInit, OnDestroy {
 
-  posts: Observable<Post[]>; // default
+  // posts: Observable<Post[]>; // default
   posteos: any[] = [];
   subscriptions: Subscription = new Subscription();
-
-
 
   constructor(public postService: PostService) { }
   // public posteos = []; para eliminar
@@ -30,19 +28,25 @@ export class PostListComponent implements OnInit, OnDestroy {
     // console.log('Listado de posteos');
     // console.log(posteos);
     // });
+
     this.miNuevoMetodo();
+
+
   }
 
 ngOnDestroy() {
-this.subscriptions.unsubscribe();
-  }
+  this.subscriptions.unsubscribe();
+}
 
-  miNuevoMetodo() {
+miNuevoMetodo() {
     this.subscriptions.add(
       this.postService.getAlexis().subscribe((posteos) => {
         this.posteos = posteos;
+
+        console.log(posteos);
+        console.log('estos son lo posteos')
       })
     );
-  }
+}
 
 }

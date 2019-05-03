@@ -5,9 +5,12 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { SwiperModule } from 'angular2-useful-swiper';
+import { SwiperComponent } from 'angular2-useful-swiper';
+import { FacebookModule } from 'ngx-facebook';
 
 
 
@@ -18,7 +21,8 @@ import { SwiperModule } from 'angular2-useful-swiper';
     FormsModule,
     MaterialModule,
     RouterModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FacebookModule.forRoot()
   ],
   exports: [
     CommonModule,

@@ -1,0 +1,45 @@
+<swiper [config]="config">
+
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of images; let i = index">
+            <div class="text-abs">
+                <p style="margin-bottom: -7px;font-style: italic">{{image.caption}}</p>
+                <p style="margin-bottom: 3px;">{{image.descrip}}</p>
+                <div *ngIf="i === 2 || i === 3 || i === 4 || i === 5 || i === 6;else hayCapitulo">
+                    <button mat-raised-button matTooltip="Tercer capítulo próximo jueves 9:00 pm" aria-label="Button" color="accent">VER AHORA</button>
+                </div>
+                <ng-template #hayCapitulo>
+                    <button [routerLink]="['/capitulos',i+1]" mat-raised-button color="accent">VER AHORA</button>
+                </ng-template>
+            </div>
+
+            <div class="img-r">
+
+                <img [src]="image.src" />
+                <div *ngIf="i === 2 || i === 3 || i === 4 || i === 5 || i === 6;else hayCapitulito">
+                    <i matTooltip="Tercer capítulo próximo jueves 9:00 pm" class="material-icons playnow">
+                            play_circle_outline
+                            </i>
+                </div>
+                <ng-template #hayCapitulito>
+                    <i [routerLink]="['/capitulos/',i+1]" class="material-icons playnow">
+                        play_circle_outline
+                        </i>
+                </ng-template>
+                <div class="txt-a">
+                    <h3>{{image.caption}}</h3>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <!-- <div class="swiper-pagination"></div> -->
+
+    <!-- <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div> -->
+
+</swiper>

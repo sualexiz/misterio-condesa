@@ -3,12 +3,53 @@
     <p>Posteado por: {{post.author}}</p>
     <p>{{post.content}}</p>
 </div> -->
+<div class="banner-int">
 
-<mat-card *ngIf="post">
-    <img src="{{post.image}}" alt="{{post.title}}">
-    <mat-card-content>{{post.content}}</mat-card-content>
-</mat-card>
+</div>
 
-<section>
+<div [routerLink]="['/blog']" class="volver">
+    <i class="material-icons">
+                arrow_back <h3>Volver</h3>
+        </i>
 
-</section>
+</div>
+
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly center" *ngIf="post" class="comenterios">
+
+    <div fxFlex="0 0 100%">
+        <h1 style="color:white;text-align: center;margin-bottom: -11px">{{post.title}}</h1>
+        <h1 style="color:white;text-align: center">Autor: {{post.author}}</h1>
+    </div>
+    <mat-card fxLayout.xs="column" fxLayout="row wrap">
+
+        <div *ngIf="post.image == null; else hayImagen">
+            <div fxFlex.xs="0 0 100%" fxFlex="0 0 27%">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ng-blog-33527.appspot.com/o/posts%2Fpredeterminado.png?alt=media&token=78b98822-e0b3-4b25-800f-4e49c8bcba55" alt="default">
+            </div>
+        </div>
+        <ng-template #hayImagen>
+            <div style="text-align: center" fxFlex.xs="0 0 100%" fxFlex="0 0 100%">
+                <img src="{{post.image}}" alt="{{post.title}}">
+            </div>
+        </ng-template>
+
+
+        <div style="padding-left: 10px" fxFlex.xs="0 0 100%" fxFlex="0 0 100%">{{post.content}}</div>
+    </mat-card>
+</div>
+
+
+<!-- <div *ngIf="n === '4yO8NQH0Wji79z6vOPEf'; else hayAnalisis" fxLayout="row wrap" fxLayoutAlign="space-evenly center" class="fb-comments">
+    <div fxFlex="0 0 100%">
+        <h1>Análisis de la historia</h1>
+        <div class="yt-video">
+
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCanalTeleantioquia%2Fvideos%2F578023066039892%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowTransparency="true" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+</div>
+
+<ng-template #hayAnalisis>
+    <h1 style="color:wheat">hola</h1>
+</ng-template> -->

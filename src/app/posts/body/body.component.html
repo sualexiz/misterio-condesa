@@ -1,98 +1,158 @@
 <section>
-
     <div class="header" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between">
 
-        <div class="sec-r" fxFlex="0 0 48%" fxFlex.xs="55">
+        <div class="sec-r" fxFlex="0 0 48%" fxShow.xs="false" fxShow="true">
             <div class="sec-abs">
-                <p>AL INTERIOR DE <br> LA CONDEZA</p>
+                <h1>AL INTERIOR DE <br> LA CONDESA</h1>
             </div>
         </div>
 
-        <div class="sec-r" fxFlex="0 0 48%" [ngStyle]="{'margin-bottom.%': 36}">
+        <div class="sec-r" fxFlex="0 0 48%" [ngStyle]="{'margin-bottom.%': 11}">
             <div class="sec-a">
-                <img src="../../../assets/img/el-misterio-de-la-condesa.png" alt="el-misterio-de-la-condesa">
+                <img [routerLink]="['/home']" [ngStyle]="{'width.%': 45}" src="../../../assets/img/el-misterio-de-la-condesa.png" alt="el-misterio-de-la-condesa" fxShow.xs="false" fxShow="true">
 
-                <div class="yt-video">
-                    <iframe src="https://www.youtube.com/embed/NoH3A0hKo2I" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="yt-video" style="padding-bottom: 56.25%;">
+                    <iframe src="https://www.youtube.com/embed/tMvHtmekFug" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-                <div>
-                    <button [routerLink]="['/capitulos']" mat-raised-button color="accent">CONOCE MÁS</button>
+                <div><br>
+                    <button [routerLink]="['/conocemas']" mat-raised-button color="accent"><h2 [ngStyle]="{'margin-bottom.%': 0}">CONOCE MÁS</h2></button>
                 </div>
             </div>
         </div>
 
 
-        <div class="sec-r" fxFlex="0 0 100%">
+        <div fxShow.xs="false" fxShow="true" class="sec-rr" fxFlex="0 0 100%">
+            <div class="sec-c">
+                <section class="swiper-container">
+                    <app-swiper></app-swiper>
+                </section>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+<section class="bg-seccion-uno">
+    <div class="seccion-1" fxLayout="row wrap" fxLayoutAlign="center">
+
+        <div fxShow.xs="true" fxShow="false" class="sec-uno-title" fxFlex="0 0 100%">
+            <div class="sec-uno-title-a">
+                <h1 class="md-display-2">AL INTERIOR DE <br> LA CONDESA</h1>
+            </div>
+        </div>
+
+        <div fxShow.xs="true" fxShow="false" class="sec-rrr" fxFlex="0 0 100%">
             <div class="sec-c">
                 <app-swiper></app-swiper>
             </div>
         </div>
 
+        <div class="sec-uno-title" fxFlex="0 0 100%">
+            <div class="sec-uno-title-a">
+                <h1>LOS QUE LE DAN VIDA A <br> LA CONDESA</h1>
+            </div>
+        </div>
 
+        <div fxFlex="40" fxFlex.xs="40">
+            <div (click)='animateMe()' (click)="activate = 'activo img'" (click)="activate2 = 'dialog__trigger2 img'" [ngClass]="activate">
+                <img mat-card-image src="../../../assets/img/rosario.png" alt="rosario">
+                <div [ngClass]="texteNone">
+                    <h1 class="acheuno" [ngStyle]="{'margin-bottom': '-13px'}">ROSARIO </h1>
+                    <h2 class="achedos" [ngStyle]="{'fo nt-style': 'italic','margin-top': '0'}">Alejandra Chamorro</h2>
+                </div>
+                <div [ngClass]="moreNone"><i class="material-icons">add_circle</i></div>
+            </div>
+        </div>
+
+
+
+        <div fxFlex="40" fxFlex.xs="40">
+            <div (click)='animateMe()' (click)="activate = 'dialog__trigger img'" (click)="activate2 = 'activo img'" [ngClass]="activate2">
+                <img mat-card-image src="../../../assets/img/matias.png" alt="matias">
+                <div [ngClass]="texteNone">
+                    <h1 class="acheuno" [ngStyle]="{'margin-bottom': '-13px'}">MATÍAS</h1>
+                    <h2 class="achedos" [ngStyle]="{'font-style': 'italic','margin-top': '0'}">Daniel Mira</h2>
+                </div>
+                <div [ngClass]="moreNone"><i class="material-icons">add_circle</i></div>
+            </div>
+        </div>
+
+
+        <div class="sec-rr" fxFlex="0 0 100%" [@animacion]='state'>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between start" class="dialog">
+                <span (click)='closeAnimateMe()' class="dialog__close">&#x2715;</span>
+                <div fxFlex="0 0 100%">
+                    <h2 id="nombre" class="dialog__title">PREUBA</h2>
+                    <h2 id="apellido" [ngStyle]="{'font-style': 'italic','margin-top': '0'}">Daniel Mira</h2>
+                </div>
+
+                <div fxFlex="0 0 48%" fxFlex.xs="0 0 100%">
+                    <div class="yt-video" style="padding-bottom: 56.25%;">
+                        <iframe id="video" src="https://www.youtube.com/embed/2f2qzsbMMEg" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+                <div fxFlex="0 0 50%" fxFlex.xs="0 0 100%">
+                    <p id="descripcion" class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit necessitatibus illo deleniti doloremque culpa voluptas recusandae, sunt eligendi amet, ut modi voluptatibus ipsa quas voluptatem consectetur atque, velit reprehenderit
+                        debitis.
+                    </p>
+                    <p id="descripcion-dos"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div fxFlex="30" fxFlex.xs="40">
+            <div (click)='animateMe()' (click)="activate = 'dialog__trigger img'" (click)="activate2 = 'activo img'" [ngClass]="activate3">
+                <img mat-card-image src="../../../assets/img/antonio.png" alt="antonio">
+                <div [ngClass]="texteNone">
+                    <h1 class="acheuno" [ngStyle]="{'margin-bottom': '-13px'}">ANTONIO</h1>
+                    <h2 class="achedos" [ngStyle]="{'font-style': 'italic','margin-top': '0'}">Juan Carlos Ruiz</h2>
+                </div>
+                <div [ngClass]="moreNone"><i class="material-icons">add_circle</i></div>
+            </div>
+        </div>
+
+        <div fxFlex="30" fxFlex.xs="40">
+            <div (click)='animateMe()' (click)="activate = 'dialog__trigger img'" (click)="activate2 = 'activo img'" [ngClass]="activate4">
+                <img mat-card-image src="../../../assets/img/rafael.png" alt="rafael">
+                <div [ngClass]="texteNone">
+                    <h1 class="acheuno" [ngStyle]="{'margin-bottom': '-13px'}">RAFAEL</h1>
+                    <h2 class="achedos" [ngStyle]="{'font-style': 'italic','margin-top': '0'}">Carlos Fernández</h2>
+                </div>
+                <div [ngClass]="moreNone"><i class="material-icons">add_circle</i></div>
+            </div>
+        </div>
+
+        <div fxFlex="30" fxFlex.xs="40">
+            <div class="dialog__trigger5 img">
+                <img mat-card-image src="../../../assets/img/emperatriz.png" alt="emperatriz">
+                <div [ngClass]="texteNone">
+                    <h1 class="acheuno" id="proximamente">PRÓXIMAMENTE</h1>
+                    <!-- <h2 [ngStyle]="{'font-style': 'italic','margin-top': '0'}">Daniel Mira</h2> -->
+                </div>
+                <!-- <div [ngClass]="moreNone"><i class="material-icons">add_circle</i></div> -->
+            </div>
+        </div>
     </div>
 </section>
 
 
-
-
-<section>
-    <div class="seccion-1">
-
-        <div style="text-align: center">
-            <p>los que le dan vida a la condesa</p>
-        </div>
-
-
-
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-
-            <div fxFlex="40" fxFlex.xs="40" style="text-align: center">
-                <img mat-card-image class="img dialog__trigger" src="../../../assets/img/rosario.png" alt="rosario">
-            </div>
-
-            <div fxFlex="40" fxFlex.xs="40" style="text-align: center">
-                <img mat-card-image class="img dialog__trigger" src="../../../assets/img/matias.png" alt="matias">
-            </div>
-        </div>
-
-        <div class="relativo">
-            <div class="dialog">
-                <span class="dialog__close">&#x2715;</span>
-                <h2 id="nombre_2" class="dialog__title">PREUBA</h2>
-                <p id="descripcion_2" class="dialog__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit necessitatibus illo deleniti doloremque culpa voluptas recusandae, sunt eligendi amet, ut modi voluptatibus ipsa quas voluptatem consectetur atque, velit reprehenderit debitis.
-                </p>
-            </div>
-        </div>
-
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-            <div fxFlex="30" fxFlex.xs="40" style="text-align: center">
-                <img mat-card-image class="img dialog__trigger" src="../../../assets/img/matias.png" alt="matias">
-
-            </div>
-
-            <div fxFlex="30" fxFlex.xs="40" style="text-align: center">
-                <img mat-card-image class="img dialog__trigger" src="../../../assets/img/matias.png" alt="matias">
-
-            </div>
-
-            <div fxFlex="30" fxFlex.xs="40" style="text-align: center">
-                <img mat-card-image class="img dialog__trigger" src="../../../assets/img/matias.png" alt="matias">
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
 <section>
 
-    <div fxLayout="row wrap" class="seccion-2">
-        <div class="cajita" fxFlex="0 0 100%" fxLayoutAlign="center center">
-            <div class="contenido">
-                <h1>EXPERIENCIAS DEL <br> MÁS ALLÁ</h1>
-                <p>Si crees haber experimentado una situiacion paranormal, puedes comentarnos tu caso y con la ayuda de expertos lo analizaremos y te guiaremos para resolver tus dudas</p>
-                <button [style.font-size.px]="20" [style.margin.px]="20" mat-raised-button color="primary" [routerLink]="['/dashboard']">INGRESA TU HISTORIA AQUI</button>
+    <div class="seccion-2">
+        <div fxLayout="row wrap" class="" fxLayoutAlign="center center">
+            <div fxFlex="0 0 60%" fxFlex.xs="0 0 80%" class="contenido">
+                <div class="anular">
+                    <h1>EXPERIENCIAS DEL <br> MÁS ALLÁ</h1>
+                    <p>Si crees haber experimentado una situación paranormal, puedes comentarnos tu caso y con la ayuda de expertos lo analizaremos y te guiaremos para resolver tus dudas</p>
+                    <button [style.font-size.px]="20 " [style.margin.px]="20 " mat-raised-button color="primary" [routerLink]="[ '/blog'] ">VISITA EL BLOG</button>
+                </div>
             </div>
         </div>
     </div>

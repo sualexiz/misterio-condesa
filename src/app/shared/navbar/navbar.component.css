@@ -3,6 +3,15 @@ span:focus {
     border: 0;
 }
 
+.menu-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar.mat-primary {
+    background: linear-gradient( to left, rgba(25, 24, 24, 0) 0%, rgba(23, 23, 23, 0) 12%, rgb(80, 77, 79) 47%, rgb(255, 255, 255) 100%) left bottom #7770 no-repeat;
+    background-size: 100% 2px;
+}
+
 span {
     cursor: pointer;
 }
@@ -10,6 +19,11 @@ span {
 a {
     text-decoration: none;
     color: white;
+}
+
+.tamanitos {
+    margin-top: 4px;
+    width: 80%;
 }
 
 a:hover,
@@ -29,7 +43,7 @@ a:active {
 }
 
 mat-toolbar {
-    border-radius: 3px;
+    border-radius: 0px;
 }
 
 @media(max-width: 959px) {

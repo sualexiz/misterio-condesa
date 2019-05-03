@@ -4,6 +4,12 @@ mat-sidenav {
     height: 100%;
 }
 
+mat-sidenav-container {
+    background-image: url('/assets/img/personajes-top-bg.png'), url('/assets/img/bg-wall.png');
+    background-repeat: no-repeat, repeat;
+    background-position: top center, top center;
+}
+
 mat-sidenav {
     width: 250px;
 }
@@ -11,3 +17,11 @@ mat-sidenav {
 main {
     padding: 0;
 }
+
+
+/* mat-sidenav.mat-drawer.mat-sidenav.ng-tns-c2-0.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted {
+    background: #62320b;
+    top: 58px;
+    border-top-right-radius: 7px;
+    color: white;
+} */

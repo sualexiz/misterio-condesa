@@ -1,37 +1,108 @@
 .container {
-    position: relative
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* .post-container {
+    position: relative;
+    left: 20%;
+} */
+
+.post-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+    left: 20%;
 }
 
 .cajita-1 {
-    position: relative;
-    background-image: url('/assets/img/bg-wall.png');
-    padding: 30px;
-    border-radius: 3px;
-    height: 30rem;
+    padding: 5px;
+    width: 65%;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
 }
 
 .cajita-2 {
-    position: relative;
-    background-image: url('/assets/img/footer_bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    padding: 30px;
-    border-radius: 3px;
-    height: 38rem;
-}
-
-.item {
-    position: relative;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-.item-contenido {
-    position: absolute;
+    background: rgba(25, 209, 216, 0.10);
     width: 100%;
+    padding: 5rem 0;
     color: white;
-    margin: 0;
-    top: 0rem;
+    font-weight: bold;
+    font-size: 3em;
     text-align: center;
+    clip-path: polygon(0 0%, 100% 19%, 100% 100%, 0% 100%);
+}
+
+.yt-video {
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+
+.yt-video iframe,
+.yt-video object,
+.yt-responsive embed {
+    height: 100%;
+    left: -2px;
+    position: absolute;
+    top: -2x;
+    width: 100%;
+}
+
+
+/* 
+@media screen and (max-width: 1400px) {
+    .header {
+        padding: 35px 100px;
+    }
+    .seccion-1 {
+        padding: 50px 15px;
+    }
+} */
+
+@media screen and (max-width: 600px) {
+    .cajita-1 {
+        width: 91%;
+        font-size: 10px;
+    }
+    .cajita-2 {
+        clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0% 100%);
+    }
+    .votacion {
+        width: 91%;
+        font-size: 10px;
+        margin: auto;
+    }
+    h2 {
+        font-size: 17px;
+        line-height: 20pt
+    }
+    .post-container {
+        position: relative;
+        padding-bottom: 0;
+        padding-top: 0;
+        height: 1%;
+        overflow: hidden;
+        left: 0;
+    }
+    /* .bajar {
+        margin-top: 20%;
+    } */
 }

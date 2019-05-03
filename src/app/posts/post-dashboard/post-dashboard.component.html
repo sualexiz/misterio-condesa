@@ -1,11 +1,27 @@
-<section>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Crear un Post
-            </mat-panel-title>
-        </mat-expansion-panel-header>
+<div class="seccion">
 
+    <mat-card>
+
+        <mat-card-header>
+            <mat-card-title>¿Quieres compartir tu historia?</mat-card-title>
+        </mat-card-header>
+
+        <mat-form-field>
+            <input matInput placeholder="Titulo de la historia *" [(ngModel)]="title">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Tu nombre *" [(ngModel)]="author">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Tu correo *" [(ngModel)]="correo">
+        </mat-form-field>
+        <p>¿Tienes un video de YouTube? ingresa el enlace aquí</p>
+        <mat-form-field>
+            <input matInput placeholder="Enlace de video" [(ngModel)]="ytvideo">
+        </mat-form-field>
+        <br>
+        <p>Sube una Imagen</p>
         <div>
             <input type="file" name="file" id="file" (change)="uploadImage($event)">
             <div [hidden]="!uploadPorcentaje">
@@ -14,19 +30,13 @@
             <div [hidden]="!image">
                 <img [src]="image || '//:0' ">
             </div>
-
-
         </div>
-
-
-        <mat-form-field>
-            <input matInput placeholder="Titulo del Post" [(ngModel)]="title">
-        </mat-form-field>
         <br>
         <mat-form-field>
-            <textarea matInput placeholder="Escribe un contenido" [(ngModel)]="content" rows="10"></textarea>>
+            <textarea matInput placeholder="Ingresa tu experiencia del más allá" [(ngModel)]="content" rows="10"></textarea>>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="accent" (click)="createPost()" [disabled]="!title || !content || !image">{{buttonText}}</button>
-    </mat-expansion-panel>
-</section>
+        <button mat-raised-button color="accent" [routerLink]="['/blog']" (click)="createPost()" [disabled]="!title || !author || !correo || !content">{{buttonText}}</button>
+    </mat-card>
+
+</div>

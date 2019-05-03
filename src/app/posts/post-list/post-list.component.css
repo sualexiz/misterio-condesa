@@ -14,3 +14,9 @@ mat-card {
 img {
     width: 100%;
 }
+
+@media screen and (max-width: 1400px) {
+    .img {
+        width: 193.8px;
+    }
+}

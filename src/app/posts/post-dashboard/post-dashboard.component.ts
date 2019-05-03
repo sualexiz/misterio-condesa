@@ -15,7 +15,10 @@ export class PostDashboardComponent implements OnInit {
   // author: string;
   title: string;
   image: string = null;
+  author: string;
+  correo: string;
   content: string;
+  ytvideo: string;
 
   buttonText = 'Crear Possst';
 
@@ -31,16 +34,20 @@ export class PostDashboardComponent implements OnInit {
 
   createPost() {
     const data = {
-      // author: this.author,
+      author: this.author,
+      correo: this.correo,
       content: this.content,
       image: this.image,
-      title: this.title
+      title: this.title,
+      ytvideo: this.ytvideo,
     };
     this.postService.create(data);
     this.title = '';
+    this.author = '';
+    this.correo = '';
     this.content = '';
-    this.buttonText = 'Post Creado!';
-    setTimeout(() => (this.buttonText = 'Crear Nuevamente?'), 3000);
+    this.buttonText = 'Historia Creada!';
+    setTimeout(() => (this.buttonText = '¿Crear Nuevamente?'), 3000);
 
   }
 

@@ -1,14 +1,18 @@
 <section>
-    <mat-card *ngFor="let p of posteos">
-        <mat-card-content routerLink={{p.id}}>
-            <img src="{{p.image}}" alt="{{p.title}}">
-            <h2>{{p.title}}</h2>
+    <mat-card *ngFor='let p of posteos' routerLink={{p.id}}>
+        <mat-card-content>
+            <div *ngIf="p.image == null; else hayImagen ">
+                <img src="https://firebasestorage.googleapis.com/v0/b/ng-blog-33527.appspot.com/o/posts%2Fpredeterminado.png?alt=media&token=78b98822-e0b3-4b25-800f-4e49c8bcba55" alt="default">
+            </div>
+            <ng-template #hayImagen>
+                <img style="height: 290px;" src="{{p.image}}" alt="{{p.title}}">
+            </ng-template>
+            <mat-card-title>
+                <h2><b>{{p.title}}</b></h2>
+            </mat-card-title>
+            <p>{{p.content | slice:0:30 }}... (Ver más)</p>
         </mat-card-content>
-        <mat-card-actions>
-            <button>
-                <!-- <mat-card-actions>Un incono de no se de que</mat-card-actions> -->
-            </button>
-        </mat-card-actions>
+        <p><b>Autor:</b> {{p.author}}</p>
     </mat-card>
 
 </section>

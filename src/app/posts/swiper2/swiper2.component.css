@@ -1,0 +1,77 @@
+.mat-raised-button {
+    border-radius: 0px;
+}
+
+.swiper {
+    height: 250px;
+    width: 80%;
+    margin: auto;
+}
+
+.swiper-wrapper {
+    position: relative;
+}
+
+.img-r {
+    position: relative;
+    transform: scale(0.7);
+    float: right;
+}
+
+.txt-a {
+    /* margin-top: -38px; */
+    position: absolute;
+    bottom: -37px;
+    z-index: 99;
+    right: 0px;
+    width: 250px;
+    color: white;
+    background-color: black;
+}
+
+.text-abs {
+    color: white;
+    text-align: left;
+    position: relative;
+    margin: 36px 0 -35px 49px;
+    background: linear-gradient( to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.21) 10%, rgb(255, 255, 255) 47%, rgba(255, 255, 255, 0.28) 100%) right top #0a0a0acf no-repeat;
+    background-size: 100% 3px;
+    width: 305px;
+}
+
+.swiper-slide.swiper-slide-duplicate.swiper-slide-active {
+    -webkit-transform: scale(1.2) !important;
+    transform: scale(1.2) !important;
+    transition: all 0.3s ease-out;
+}
+
+.swiper-slide.ng-star-inserted.swiper-slide-active {
+    -webkit-transform: scale(1.2) !important;
+    transform: scale(1.2) !important;
+    transition: all 0.3s ease-out;
+}
+
+.swiper-slide.swiper-slide-duplicate .text-abs {
+    opacity: 0;
+}
+
+.swiper-slide.ng-star-inserted .text-abs {
+    opacity: 0;
+}
+
+.swiper-slide.ng-star-inserted.swiper-slide-active .text-abs {
+    opacity: 1;
+}
+
+i.material-icons.playnow {
+    position: absolute;
+    transform: scale(2.5);
+    top: 50%;
+    left: 50%;
+    color: white;
+}
+
+
+/* .swiper-slide img {
+    width: 100%;
+} */

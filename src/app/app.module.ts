@@ -15,6 +15,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { SwiperModule } from 'angular2-useful-swiper';
+import { FacebookModule } from 'ngx-facebook';
+// import { SafeUrlPipe } from './videosalud.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -25,18 +27,20 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // SafeUrlPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     CoreModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    SwiperModule
+    SwiperModule,
+    FacebookModule.forRoot()
 
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
